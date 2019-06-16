@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 import './styles/style.styl';
+import Main from './components/Main';
 
-render(<h1>Reduxstagram component!</h1>, document.getElementById('root'));
+render(<Main />, document.getElementById('root'));
