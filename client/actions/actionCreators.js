@@ -13,3 +13,11 @@ export const addComment = (postId, author, comment) => {
     comment
   }
 }
+
+export const removeComment = (postId, index) => {
+  return {
+    type: 'REMOVE_COMMENT',
+    postId,
+    index
+  }
+}
