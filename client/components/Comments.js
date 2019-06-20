@@ -1,6 +1,23 @@
 import React, { Component } from 'react';
 
 class Comments extends Component {
+
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  
+  handleSubmit(e) {
+    e.preventDefault();
+
+    const { postId } = this.props.params.postId;
+    const author = this.refs.author.value;
+    const comment = this.refs.comment.value;
+
+    this.props.addComment(postId, author, comment);
+    this.refs.commentForm.reset();
+  }
+
   render() {
     const { postComments } = this.props;
 
@@ -17,9 +34,9 @@ class Comments extends Component {
             </div> 
            )
         })}
-        <form ref="commentForm" className="comment-form">
-          <input type="text" name="author" id="author" placeholder="Name" />
-          <input type="text" name="comment" id="comment" placeholder="Comment" />
+        <form ref="commentForm" className="comment-form" onSubmit={this.handleSubmit}>
+          <input type="text" ref="author" name="author" id="author" placeholder="Name" />
+          <input type="text" ref="comment" name="comment" id="comment" placeholder="Comment" />
           <input type="submit" value="Add comment" hidden />
         </form>
       </div>

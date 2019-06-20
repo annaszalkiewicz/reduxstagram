@@ -15,7 +15,8 @@ class Single extends Component {
           post={post}
           {...this.props} />
         <Comments
-          postComments={postComments} />
+          postComments={postComments}
+          {...this.props} />
       </div>
     )
   }
