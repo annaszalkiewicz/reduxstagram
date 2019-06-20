@@ -21,6 +21,7 @@ class Comments extends Component {
 
   render() {
     const { postComments } = this.props;
+    const { postId }= this.props.params; 
 
     return(
       <div className="comments">
@@ -30,7 +31,7 @@ class Comments extends Component {
               <p className="user">
                 <strong>{comment.user}</strong>
                 {comment.text}
-                <button className="remove-comment">&times;</button>
+                <button className="remove-comment" onClick={this.props.removeComment.bind(null, postId, i)}>&times;</button>
               </p>
             </div> 
            )
