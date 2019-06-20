@@ -8,9 +8,10 @@ class Comments extends Component {
   }
   
   handleSubmit(e) {
+    
     e.preventDefault();
 
-    const { postId } = this.props.params.postId;
+    const { postId } = this.props.params;
     const author = this.refs.author.value;
     const comment = this.refs.comment.value;
 
