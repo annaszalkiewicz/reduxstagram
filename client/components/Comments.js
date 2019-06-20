@@ -17,6 +17,11 @@ class Comments extends Component {
             </div> 
            )
         })}
+        <form ref="commentForm" className="comment-form">
+          <input type="text" name="author" id="author" placeholder="Name" />
+          <input type="text" name="comment" id="comment" placeholder="Comment" />
+          <input type="submit" value="Add comment" hidden />
+        </form>
       </div>
     )
   }
